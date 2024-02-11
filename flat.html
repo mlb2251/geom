@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Flat</title>
+    <style>
+
+    </style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+
+<!-- <script type="module">
+            import { resample } from './flat.js';
+    
+    export function re(){
+        resample()
+    }        
+</script> -->
+
+</head>
+
+<body>
+
+
+    <!-- make the text field less wide -->
+    <!-- Alpha:<input type="text" style="width:30px" id="alpha" value="1" > -->
+
+    <!-- slider from 0 to 2 -->
+    Alpha:
+    <span id="alpha_val">1</span>
+    <input type="range" id="alpha" name="alpha" min="0" max="1" step="0.01" value="1" oninput="resample()">
+
+    <br>    
+    (+ whole number: <input type="range" id="alpha-big" min="0" max="20" step="1" value="0" oninput="resample()">)
+
+    <br>
+
+    ngon: <input type="text" style="width:30px" id="ngon" value="3" > <button onclick="set_ngon()">set</button>
+    <br>
+
+
+    N_samples:<input type="text" style="width:60px" id="N_samples" value="5000" >
+    
+    <button onclick="resample()">Resample</button>
+
+    <div id="my_dataviz"></div>
+
+
+    <script src="/flat.js"></script>
+
+
+</body>
+
+</html>
