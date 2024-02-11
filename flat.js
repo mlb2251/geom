@@ -53,6 +53,7 @@ function ngon(n) {
 // window.verts = ngon(7)
 // window.verts = [[1, 0], [0, .5], [.5, 0]]
 // window.verts = [[1, 0], [0, .2], [1, .2], [0, 0]]
+
 window.verts = [[0, 0], [.45, .5], [.5, .52], [.55, .5], [1, 0]]
 
 function set_ngon() {
@@ -104,18 +105,16 @@ function resample() {
     // update the span
     d3.select("#alpha_val").text((Number(d3.select("#alpha").property("value")) + Number(d3.select("#alpha-big").property("value"))).toFixed(2))
     svg.selectAll(".poly").remove()
-    plot(sample_data())
-}
-resample()
-
-function plot(data) {
-
     svg.selectAll(".dots").remove()
 
     const unit_square = draw_polygon([[0, 0], [0, 1], [1, 1], [1, 0]])
     unit_square.attr("stroke", "black").attr("stroke-width", 2).attr("stroke-dasharray", "5,5")
 
+    plot(sample_data())
+}
+resample()
 
+function plot(data) {
 
     // show the dots
     svg.append("g")
